@@ -4,9 +4,13 @@ public class Card {
 	private String type;
 
 	public Card(String type, int value, String suit) {
-		this.value = value;
-		this.suit = suit;
 		this.type = type;
+		this.value = value;
+		this.suit = suit;	
+	}
+
+	public String type() {
+		return type;
 	}
 
 	public int value() {

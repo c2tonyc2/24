@@ -1,0 +1,1 @@
+ALL image files in this directory are the work of Diana Ly.  

@@ -33,7 +33,9 @@ public class Deck {
 	private void standardDeck() {
 		this.addAces(0);
 		this.addNormalCards(4);
-		this.addRoyals(40, 10);
+		int[] face_vales = {11, 12, 13};
+		this.addRoyals(40, face_vales);
+
 	}
 
 
@@ -49,19 +51,21 @@ public class Deck {
 	private void addNormalCards(int start) {
 		for (int i = 2; i < 11; i += 1) {
 			for(String suit : suits) {
-				cards[start] = new Card("", i, suit);
+				cards[start] = new Card("number", i, suit);
 				start += 1;
 			}
 		}
 	}
 
 	// Add royal cards worth face_value to a deck from start
-	private void addRoyals(int start, int face_value) {
+	private void addRoyals(int start, int[] face_value) {
+		int counter = 0;
 		for(String royal : royals) {
 			for(String suit : suits) {
-				cards[start] = new Card(royal, face_value, suit);
+				cards[start] = new Card("royal", face_value[counter], suit);
 				start += 1;
 			}
+			counter += 1;
 		}
 	}
 
